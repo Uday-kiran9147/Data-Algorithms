@@ -56,7 +56,7 @@ class Algorithms extends StatelessWidget {
                   }
                 },
                 onSaved: (value) {
-                  // lastname = value.toString();
+                  Algorithm_Steps = value.toString();
                 },
                 
                           ),
