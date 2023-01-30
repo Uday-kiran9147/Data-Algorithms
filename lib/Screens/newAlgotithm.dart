@@ -59,6 +59,9 @@ class _addAlgoState extends State<addAlgo> {
                     key: ValueKey("Last Name"),
                     validator: (value) {
                       if (value.toString().isEmpty) {
+
+
+                        
                         return " cannot be empty";
                       } else {
                         return null;
