@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:rotating_icon_button/rotating_icon_button.dart';
 
 class Algorithms extends StatelessWidget {
-
   late String Algorithm_Name;
   late String Algorithm_Steps;
 
-  
   addAlgo() {
     return Scaffold(
       appBar: AppBar(
@@ -18,8 +16,8 @@ class Algorithms extends StatelessWidget {
           child: Form(
               // key: _formkey,
               child: SingleChildScrollView(
-                child: Column(children: [
-                          TextFormField(
+            child: Column(children: [
+              TextFormField(
                 decoration: InputDecoration(
                     labelText: "Name",
                     border: OutlineInputBorder(),
@@ -35,14 +33,13 @@ class Algorithms extends StatelessWidget {
                 onSaved: (value) {
                   // firstname = value.toString();
                 },
-                          ),
-                          Divider(),
-                          TextFormField(
+              ),
+              Divider(),
+              TextFormField(
                 cursorHeight: 20,
                 keyboardType: TextInputType.multiline,
                 maxLines: 7,
                 decoration: InputDecoration(
-                  
                   labelText: ' Complete Algorithm ',
                   hintText: "Algorithm in Steps ",
                   border: OutlineInputBorder(),
@@ -58,15 +55,14 @@ class Algorithms extends StatelessWidget {
                 onSaved: (value) {
                   Algorithm_Steps = value.toString();
                 },
-                
-                          ),
-                          RotatingIconButton(
+              ),
+              RotatingIconButton(
                   shape: ButtonShape.circle,
                   // background: Colors.green,
                   onTap: () {},
                   child: Text("Submit"))
-                        ]),
-              ))),
+            ]),
+          ))),
     );
   }
 
