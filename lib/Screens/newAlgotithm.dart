@@ -8,7 +8,7 @@ class addAlgo extends StatefulWidget {
 class _addAlgoState extends State<addAlgo> {
   late String Algorithm_Name = "";
 
- late String Algorithm_Steps = "";
+  late String Algorithm_Steps = "";
   final Algorithm_NameController = TextEditingController();
   final Algorithm_StepsController = TextEditingController();
 
@@ -36,7 +36,6 @@ class _addAlgoState extends State<addAlgo> {
                         labelText: "Name",
                         border: OutlineInputBorder(),
                         hintText: "Algrithm Name"),
-                    // key: ValueKey("First Name"),
                     validator: (value) {
                       if (value.toString().isEmpty) {
                         return "Algorithm Field  cannot be empty";
@@ -76,13 +75,11 @@ class _addAlgoState extends State<addAlgo> {
                     // },
                   ),
                   ElevatedButton(
-                      // shape: ButtonShape.circle,
-                      // background: Colors.green,
                       onPressed: () {
                         if (_formkey.currentState!.validate()) {
                           _formkey.currentState!.save;
-                          Algorithm_Name=Algorithm_NameController.text;
-                          Algorithm_Steps=Algorithm_StepsController.text;
+                          Algorithm_Name = Algorithm_NameController.text;
+                          Algorithm_Steps = Algorithm_StepsController.text;
                           print(Algorithm_Name);
                           print(Algorithm_Steps);
                         }
