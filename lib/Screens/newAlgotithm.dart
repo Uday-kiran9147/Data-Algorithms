@@ -8,7 +8,10 @@ class addAlgo extends StatefulWidget {
 class _addAlgoState extends State<addAlgo> {
   late String Algorithm_Name = "";
 
-  late String Algorithm_Steps = "";
+ late String Algorithm_Steps = "";
+  final Algorithm_NameController = TextEditingController();
+  final Algorithm_StepsController = TextEditingController();
+
   final _formkey = GlobalKey<FormState>();
   addAlgo obj = new addAlgo();
 
@@ -28,6 +31,7 @@ class _addAlgoState extends State<addAlgo> {
               child: SingleChildScrollView(
                 child: Column(children: [
                   TextFormField(
+                    controller: Algorithm_NameController,
                     decoration: InputDecoration(
                         labelText: "Name",
                         border: OutlineInputBorder(),
@@ -40,14 +44,15 @@ class _addAlgoState extends State<addAlgo> {
                         return null;
                       }
                     },
-                    onSaved: (value) {
-                      setState(() {
-                        Algorithm_Name = value!;
-                      });
-                    },
+                    // onSaved: (value) {
+                    //   setState(() {
+                    //     Algorithm_Name = value!;
+                    //   });
+                    // },
                   ),
                   Divider(),
                   TextFormField(
+                    controller: Algorithm_StepsController,
                     cursorHeight: 20,
                     keyboardType: TextInputType.multiline,
                     maxLines: 7,
@@ -64,11 +69,11 @@ class _addAlgoState extends State<addAlgo> {
                         return null;
                       }
                     },
-                    onSaved: (value) {
-                      setState(() {
-                        Algorithm_Steps = value!;
-                      });
-                    },
+                    // onSaved: (value) {
+                    //   setState(() {
+                    //     Algorithm_Steps = value!;
+                    //   });
+                    // },
                   ),
                   ElevatedButton(
                       // shape: ButtonShape.circle,
@@ -76,6 +81,8 @@ class _addAlgoState extends State<addAlgo> {
                       onPressed: () {
                         if (_formkey.currentState!.validate()) {
                           _formkey.currentState!.save;
+                          Algorithm_Name=Algorithm_NameController.text;
+                          Algorithm_Steps=Algorithm_StepsController.text;
                           print(Algorithm_Name);
                           print(Algorithm_Steps);
                         }
