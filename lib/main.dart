@@ -108,14 +108,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               child: ListTile(
                 onTap: () => {
                   Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => Algorithms()))
+                      MaterialPageRoute(builder: (context) => AlgorithmsPage()))
                 },
                 title: Text(listname2['name'][index]),
                 subtitle: Text(listname2['number'][index]),
               ),
             );
           }),
-      Algorithms(),
+      AlgorithmsPage(),
       Text(
         'CODE',
         style: optionStyle,
