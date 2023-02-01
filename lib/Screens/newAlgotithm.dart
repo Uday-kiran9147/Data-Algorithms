@@ -11,7 +11,7 @@ class NewAlgorithm extends StatelessWidget {
 
   final _formkey = GlobalKey<FormState>();
 
-  final Function addAlgo;
+  final Function addAlgo; // Funcution TYPE
   NewAlgorithm(this.addAlgo);
 
   @override
