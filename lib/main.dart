@@ -107,8 +107,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             return Card(
               child: ListTile(
                 onTap: () => {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => AlgorithmsPage()))
+                  // Navigator.pushReplacement(context,
+                  //     MaterialPageRoute(builder: (context) => AlgorithmsPage()))
                 },
                 title: Text(listname2['name'][index]),
                 subtitle: Text(listname2['number'][index]),
@@ -145,7 +145,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.business),
-              label: 'Algorith',
+              label: 'Algorithm',
               backgroundColor: Colors.cyan,
             ),
             BottomNavigationBarItem(

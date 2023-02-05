@@ -1,7 +1,7 @@
-import 'package:dsa/Screens/bottom_nav_bar/Algorithm_list.dart';
+import 'package:dsa/Screens/Algorithm_list.dart';
+import 'package:dsa/Screens/newAlgotithm.dart';
 import 'package:flutter/material.dart';
 import '../../constructors/NewAlgorithm.dart';
-import '../newAlgotithm.dart';
 
 class AlgorithmsPage extends StatefulWidget {
   @override
@@ -10,6 +10,7 @@ class AlgorithmsPage extends StatefulWidget {
 
 class _AlgorithmsPageState extends State<AlgorithmsPage> {
   List<AlgorithmConstructor> _algorithm = [];
+  // late final Function _CompleteAlgorithm;
 
   void addnewAlgorithm(String name, String body) {
     final newAlgo =
@@ -23,13 +24,19 @@ class _AlgorithmsPageState extends State<AlgorithmsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: AlgorithmList(_algorithm),
-        // Expanded(
+        child: _algorithm.isEmpty
+            ? Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Center(child: Text("OOP\'s...! List is Empty")),
+                  Divider(),
+                  CircularProgressIndicator()
+                ],
+              )
+            : AlgorithmList(_algorithm),
+        // child: Expanded(
         //   child: ListView.builder(itemBuilder: (context, index) {
-        //     return ListTile(
-        //       leading: Icon(Icons.list),
-        //       // title: ,
-        //     );
+        //     return AlgorithmList(_algorithm);
         //   }),
         // ),
       ),

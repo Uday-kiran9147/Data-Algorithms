@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 
-class NewAlgorithm extends StatelessWidget {
+class NewAlgorithm extends StatefulWidget {
+  final Function addAlgo; // Funcution TYPE
+  NewAlgorithm(this.addAlgo);
+
+  @override
+  State<NewAlgorithm> createState() => _NewAlgorithmState();
+}
+
+class _NewAlgorithmState extends State<NewAlgorithm> {
   late String Algorithm_Name = "";
 
   late String Algorithm_Steps = "";
@@ -10,9 +18,6 @@ class NewAlgorithm extends StatelessWidget {
   final Algorithm_StepsController = TextEditingController();
 
   final _formkey = GlobalKey<FormState>();
-
-  final Function addAlgo; // Funcution TYPE
-  NewAlgorithm(this.addAlgo);
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +29,10 @@ class NewAlgorithm extends StatelessWidget {
         ),
       ),
       body: Container(
-          padding: EdgeInsets.all(15),
-          child: Form(
-              key: _formkey,
-              child: ListView(children: [
+        padding: EdgeInsets.all(15),
+        child: Form(
+          key: _formkey,
+          child: ListView(children: [
                 TextFormField(
                   keyboardType: TextInputType.name,
                   controller: Algorithm_NameController,
@@ -81,13 +86,15 @@ class NewAlgorithm extends StatelessWidget {
                         Algorithm_Steps = Algorithm_StepsController.text;
                         print(Algorithm_Name);
                         print(Algorithm_Steps);
-                        addAlgo(Algorithm_Name, Algorithm_Steps);
+                        widget.addAlgo(Algorithm_Name, Algorithm_Steps);
                         Navigator.pop(context);
                       }
                       print("submitted");
                     },
                     child: Text("Submit"))
-              ]))),
+              ]),
+        ),
+      ),
     );
   }
 }
