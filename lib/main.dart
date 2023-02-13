@@ -1,5 +1,7 @@
+import 'package:dsa/Provider/algolist_provider.dart';
 import 'package:dsa/Screens/bottom_nav_bar/algotithms.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,10 +10,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: _title,
-      home: MyStatefulWidget(),
-    );
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => AlgoListProvider())
+        ],
+        child: MaterialApp(
+          title: _title,
+          home: Consumer<AlgoListProvider>(
+              builder: (context, listvalue, child) => MyStatefulWidget()),
+        ));
   }
 }
 
