@@ -122,7 +122,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               ),
             );
           }),
-      AlgorithmsPage(),
+      AllAlgorithms(),
       Text(
         'CODE',
         style: optionStyle,

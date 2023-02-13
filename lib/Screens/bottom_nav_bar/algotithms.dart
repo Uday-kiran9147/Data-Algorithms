@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../Provider/algolist_provider.dart';
 
-class AlgorithmsPage extends StatefulWidget {
+class AllAlgorithms extends StatefulWidget {
   @override
-  State<AlgorithmsPage> createState() => _AlgorithmsPageState();
+  State<AllAlgorithms> createState() => _AllAlgorithmsState();
 }
 
-class _AlgorithmsPageState extends State<AlgorithmsPage> {
+class _AllAlgorithmsState extends State<AllAlgorithms> {
   @override
   Widget build(BuildContext context) {
     return Consumer<AlgoListProvider>(

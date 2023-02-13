@@ -4,7 +4,7 @@ import 'bottom_nav_bar/algotithms.dart';
 
 class CompleteAlgorithm extends StatelessWidget {
 
-  AlgorithmsPage al = new AlgorithmsPage();
+  AllAlgorithms al = new AllAlgorithms();
 
   @override
   Widget build(BuildContext context) {
