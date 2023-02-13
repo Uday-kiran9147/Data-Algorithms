@@ -129,7 +129,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       theme: ThemeData(brightness: Brightness.dark, primaryColor: Colors.amber),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Default Home Screen'),
+          title: const Text('Default '),
         ),
         body: Center(
           child: _widgetOptions.elementAt(_selectedIndex),

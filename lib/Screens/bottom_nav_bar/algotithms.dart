@@ -11,7 +11,6 @@ class AlgorithmsPage extends StatefulWidget {
 class _AlgorithmsPageState extends State<AlgorithmsPage> {
   List<AlgorithmConstructor> _algorithm = [];
   // late final Function _CompleteAlgorithm;
-
   void addnewAlgorithm(String name, String body) {
     final newAlgo =
         AlgorithmConstructor(Algotithm_name: name, Algotithm_Body: body);
@@ -26,9 +25,10 @@ class _AlgorithmsPageState extends State<AlgorithmsPage> {
       body: Container(
         child: _algorithm.isEmpty
             ? Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Center(child: Text("OOP\'s...! List is Empty")),
+                  Divider(),
                   Divider(),
                   CircularProgressIndicator()
                 ],
