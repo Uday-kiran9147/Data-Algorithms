@@ -26,11 +26,6 @@ class _AllAlgorithmsState extends State<AllAlgorithms> {
                   ],
                 )
               : AlgorithmList(value.algorithm),
-          // child: Expanded(
-          //   child: ListView.builder(itemBuilder: (context, index) {
-          //     return AlgorithmList(_algorithm);
-          //   }),
-          // ),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () => {
