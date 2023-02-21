@@ -6,4 +6,5 @@ class AlgorithmConstructor {
 
   AlgorithmConstructor(
       {@required this.Algotithm_name, @required this.Algotithm_Body});
+      
 }

@@ -1,5 +1,7 @@
+import 'package:dsa/Provider/algolist_provider.dart';
 import 'package:dsa/Screens/bottom_nav_bar/algotithms.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,10 +10,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: _title,
-      home: MyStatefulWidget(),
-    );
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => AlgoListProvider())
+        ],
+        child: MaterialApp(
+          title: _title,
+          home: Consumer<AlgoListProvider>(
+              builder: (context, listvalue, child) => MyStatefulWidget()),
+        ));
   }
 }
 
@@ -107,15 +114,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             return Card(
               child: ListTile(
                 onTap: () => {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => AlgorithmsPage()))
+                  // Navigator.pushReplacement(context,
+                  //     MaterialPageRoute(builder: (context) => AlgorithmsPage()))
                 },
                 title: Text(listname2['name'][index]),
                 subtitle: Text(listname2['number'][index]),
               ),
             );
           }),
-      AlgorithmsPage(),
+      AllAlgorithms(),
       Text(
         'CODE',
         style: optionStyle,
@@ -129,7 +136,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       theme: ThemeData(brightness: Brightness.dark, primaryColor: Colors.amber),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Default Home Screen'),
+          title: const Text('Default '),
         ),
         body: Center(
           child: _widgetOptions.elementAt(_selectedIndex),
@@ -145,7 +152,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.business),
-              label: 'Algorith',
+              label: 'Algorithm',
               backgroundColor: Colors.cyan,
             ),
             BottomNavigationBarItem(
