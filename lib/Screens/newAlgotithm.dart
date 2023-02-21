@@ -79,6 +79,7 @@ class _NewAlgorithmState extends State<NewAlgorithm> {
                     ),
                     Divider(),
                     TextFormField(
+                      // focusNode: true,
                       controller: Algorithm_StepsController,
                       cursorHeight: 20,
                       keyboardType: TextInputType.multiline,
